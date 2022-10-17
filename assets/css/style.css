@@ -1,0 +1,992 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+h1, h2, h3, h4, h5, h6{
+    padding: 0;
+    margin: 0;
+}
+ul li{
+    list-style: none;
+}
+html, body{
+	height: 100%;
+	font-family: 'Roboto', sans-serif;
+	scroll-behavior: smooth;
+}
+a{
+    margin: 0; 
+    padding: 0;
+    text-decoration: none;
+}
+/*Силизация шапки*/
+header.header{
+    background: #083259;
+}
+.header-inner{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+/*Общий контейнер*/
+.container{
+    max-width: 1440px;
+    padding: 0 10px;
+    margin: 0 auto;
+}
+.header-emblem{
+    display: flex;
+    align-items: center;
+}
+.header-emblem img{
+    padding: 6px 0px 8px 4px;
+}
+.kz_emblem__text{
+    color: #fff;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;  
+}
+.__margin{
+    margin-left: 4px;
+}
+.header-auth{
+    display: flex;
+    align-items: center;
+}
+.auth-icon-item{
+    padding: 9px;
+    background: #102F33;
+    border-radius: 50%;
+}
+span.auth-icon-item{
+    color: #fff;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+}
+.icon-margin{
+    margin-right: 3px;
+}
+.auth-user__margin{
+    margin-left: 14px;
+}
+.auth-user{
+    color: #fff;
+    position: relative;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;  
+}
+.auth-user::before{
+    content: url('../img/main__page/auth_user.svg');
+    position: absolute;
+    top: 0.25px;
+    left: -14px;
+    width: 100%;
+    height: 100%;
+}
+/*Шапка с большим гербом и вопросы ответы*/
+.under-header{
+    background: #1F3C88;
+}
+.under-header-inner{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.under-header-inner img{
+    padding: 36px 0 50px 0;
+}
+.title{
+    text-align: center;
+    margin-left: -100px;
+    font-weight: 400;
+    max-width: 688px;
+    font-size: 20px;
+    line-height: 23px;
+    color: #CAC8C8;  
+}
+.title__second{
+    padding-top: 20px;
+    font-size: 26px;
+    line-height: 30.47px;
+}
+.ask-btn{
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 22px;
+    color: #FFFFFF;
+    padding: 11px 21px 12px 22px;
+    border: 1px solid #FFE3E3;
+    border-radius: 20px; 
+    text-align: center;  
+}
+.ask-btn:hover{
+    box-shadow: 0px 0px 4px rgba(255, 255, 255, .25);
+    transition: .3s ease all;
+}
+/*Стили меню*/
+.menu-wrapper{
+    display: block;
+    background: url('../img/main__page/ornament_kz.png') rgba(217, 217, 217, 1);
+    height: 86.91px;
+    border-radius: 5px;
+}
+.menu-inner{
+    padding: 35px 10px 35px 10px;
+    color: #1F3C88;
+    font-size: 18px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.menu-list{
+    display: flex;
+    width: 100%;
+}
+.menu-item a,.menu-item a:visited{
+    color: #1F3C88;
+    transition: .3s ease all;
+}
+.menu-item a:hover,
+.menu-item a:active{
+    color: #04102e;
+    transition: .3s ease all;
+}
+.menu-list li:not(:last-child){
+    padding-right: 15px;
+}
+/*Стилизация кнопки поиска*/
+li.search-btn{
+    position: absolute;
+    cursor: pointer;
+    right: 10px;
+}
+input.input-search{
+    display: none;
+    margin-top: -13px;
+    padding: 10px 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 1px rgba(0, 0, 0, .1);
+    background: #1F3C88;
+    color: #fff;
+    border: none;
+    outline: none;
+    position: relative;
+}
+.input.input-search.show{
+    display: block;
+}  
+input.input-search:focus {
+    border: 1px solid #083259;
+}
+.search-btn.hide img{
+    display: none;
+}
+/*Бургерное меню*/
+.menu-burger{
+    display: none;
+    cursor: pointer;
+    width: 40px;
+    margin-top: 15px;
+    height: 40px;
+    position: absolute;
+    left: 10px;
+}
+.burger-container{
+    position: relative;
+}
+/*Анимация бургера*/
+.burger-container span:nth-child(1){
+    position: absolute;
+    top: 5px;
+    width: 100%;
+    height: 4px;
+    background: #083259;
+}
+.burger-container span:nth-child(2){
+    position: absolute;
+    top: 15px;
+    width: 100%;
+    height: 4px;
+    background: #083259;
+    transition: .3s ease all;
+}
+.burger-container span:nth-child(3){
+    position: absolute;
+    top: 25px;
+    width: 100%;
+    height: 4px;
+    background: #083259;
+    transition: .3s ease all;
+}
+.burger-container.active span:nth-child(1){
+    display: none;
+}
+.burger-container.active span:nth-child(2){
+    transform: rotate(45deg);
+    transition: .3s ease all;
+}
+.burger-container.active span:nth-child(3){
+    transform: rotate(-45deg);
+    top: 15px;
+    transition: .3s ease all;
+}
+/*Мобильное меню*/
+.mobile-menu-container{
+    padding: 0;
+    transition: .3s ease all;
+}
+.mobile-menu-container.active{
+    background-color: #d9d9d9;
+    transition: .3s ease all;
+    padding: 10px 0 20px 0;
+}
+.mobile-menu-list{
+    padding: 0;
+    display: none;
+}
+.mobile-menu-container.active .mobile-menu-list{
+    padding: 0 10px;
+    display: block;
+    transition: .3s ease;    
+}
+.mobile-menu-list li{
+    color: #1F3C88;
+    font-size: 18px;
+    font-weight: 700;
+    padding-top: 10px;
+    border-bottom: 1px solid rgba(0, 0, 0, .1);
+}
+/*Стили блока направление деятельности*/
+.activities-title,
+.__title{
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 28px;    
+    color: #2F3D53 ;
+    padding: 33.95px 0 25px 0;    
+}
+.activities-cards{
+    display: grid;
+    grid-template-columns:repeat(3, 400px);
+    gap: 30px 20px;
+    justify-content: center;
+    padding-bottom: 40px;
+}
+.card-item{
+    display: block;
+    position: relative;
+    background: url('../img/main__page/activities_cards/card-item1.png') no-repeat;
+    border-radius: 10px;
+    max-width: 360px;
+    height: 171px;
+    cursor: pointer;
+    transition: .3s ease all;
+}
+.card-item:hover{
+    box-shadow: 0 0 10px rgba(31, 60, 136, 0.8);
+    transition: .3s ease all;
+}
+.__card-information{
+    background: url('../img/main__page/activities_cards/card-item2.png') no-repeat;
+}
+.__kids-rights{
+    background: url('../img/main__page/activities_cards/card-item3.png') no-repeat;    
+}
+.__license{
+    background: url('../img/main__page/activities_cards/card-item4.png') no-repeat; 
+}
+.__monitoring{
+    background: url('../img/main__page/activities_cards/card-item5.png') no-repeat; 
+}
+.__status{
+    background: url('../img/main__page/activities_cards/card-item6.png') no-repeat; 
+}
+.__apostil{
+    background: url('../img/main__page/activities_cards/card-item7.png') no-repeat; 
+}
+.card-item-title{
+    position: absolute;
+    bottom: 29px;
+    padding: 10px 24px 10px 19px;
+    color: #fff;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+    background: rgba(31, 60, 136, 0.8);
+    border-radius: 10px;
+}
+/*Стили блока новостей*/
+.news-title{
+    display: flex;
+    justify-content: space-between;
+}
+.news-subscribe a, .news-subscribe a:visited{
+    color: #1F3C88;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    transition: .3s ease all;
+}
+.news-subscribe a:hover{
+    color: #04102e;;
+    transition: .3s ease all;
+}
+a.all-news-link{
+    padding-right: 33px;
+}
+.news-cards{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-content: center;
+    gap: 0 60px;
+    padding-bottom: 40px;
+}
+.new-item{
+    max-width: 375px;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.3);
+    border: 1px solid rgba(0, 0, 0, 0.11);
+    box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.11);
+    border-radius: 10px;
+}
+.new-item:hover{
+    box-shadow: 0 0 10px rgba(31, 60, 136, 0.8);
+    transition: .3s ease all;
+}
+.new-item img{
+    width: 100%;
+}
+.news-content{
+    padding: 22px 0 0 22px;
+}
+.news-item-title{
+    font-weight: 400;
+    padding-bottom: 35px;
+    font-size: 16px;
+    line-height: 19px;
+    text-transform: uppercase;
+}
+.news-item-date{
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    color: rgba(0, 0, 0, 0.55);
+    padding-bottom: 27px;
+}
+.__posts{
+    padding: 22px 24px 0 18px;
+}
+.__posts-item-title{
+    padding-bottom: 0;
+}
+.__posts-item-date{
+    padding-bottom: 20px;
+    padding-top: 11px;
+}
+/*Разделитель с 30 летием*/
+.thirty-years-inner{
+    padding-bottom: 30px;
+}
+.thirty-years-inner img{
+    width: 100%;
+    border-radius: 10px;
+}
+/*Стили блока о департаменте*/
+.department-cards{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-content: center;
+    gap: 0 60px;
+    padding-bottom: 40px;
+}
+.department-card-item{
+    max-width: 370px;
+    cursor: pointer;
+    background: rgba(59, 66, 86, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.11);
+    border-radius: 10px;
+}
+.department-card-item:hover{
+    box-shadow: 0 0 10px rgba(31, 60, 136, 0.8);
+    transition: .3s ease all;
+}
+.department-title{
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 28px;    
+    color: #2F3D53 ;
+    padding: 33.95px 0 25px 0;   
+}
+.department-card-content{
+    padding: 20px;
+}
+.department-card-title{
+    font-weight: 400;
+    font-size: 19px;
+    line-height: 22px;
+    color: #2F3D53 ;
+}
+.department-card-text{
+    position: relative;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: #616161;
+    padding: 15px 0 40px 0;
+}
+.department-card-text p{
+    padding-bottom: 15px;
+}
+.department-all-posts-link,
+a.department-all-posts-link:active,
+a.department-all-posts-link:visited{
+    position: absolute;
+    bottom: 10px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;     
+    color: #1F3C88;   
+}
+a.department-all-posts-link:hover{
+    color: #04102e;;
+    transition: .3s ease all;
+}
+a.department-all-posts-link::after{
+    content: url('../img/main__page/arrow-right.svg');
+    right: -20px;
+    position: absolute;
+}
+.department-post-title{
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: #1F3C88;   
+}
+.department-post-date{
+    padding: 8px 0 10px 0;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    color: #616161;
+}
+/*Стили блока разделителя*/
+.separator-wrapper{
+    display: block;
+    background: url('../img/main__page/ornament_kz.png') no-repeat, #1F3C88;;
+    height: 75px;  
+    margin-bottom: 40px;
+}
+/*Стили блока государственные услуги*/
+.goverment-services-inner{
+    padding-bottom: 40px;
+}
+.goverment-services-title{
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 28px;    
+    color: #2F3D53;
+    padding-bottom: 25px;
+}
+.goverment-services-cards{
+    display: grid;
+    justify-content: center;
+    gap: 0 30px;
+    grid-template-columns: auto auto;
+}
+.goverment-card-item{
+    max-width: 540px;
+    cursor: pointer;
+    background: rgba(59, 66, 86, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.22);
+    border-radius: 10px;
+}
+.goverment-card-item:hover{
+    box-shadow: 0 0 10px rgba(31, 60, 136, 0.8);
+    transition: .3s ease all;
+}
+.goverment-card-content{
+    padding: 25px;
+}
+.goverment-card-title-block{
+    display: flex;
+}
+.goverment-card-icon img{
+    display: block;
+    padding: 9px;
+}
+.__icon_license{
+    padding-top: 5px;
+}
+.goverment-card-icon{
+    width: 43px;
+    height: 43px;
+    background: rgba(85, 85, 85, 0.16);
+    border-radius: 50%;
+}
+.goverment-card-title{
+    padding-left: 11px;
+}
+.goverment-card-list{
+    padding: 25px 0 25px 0;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: rgba(0, 0, 0, 0.88);
+}
+.goverment-card-list li:not(:last-child){
+    padding-bottom: 10px;
+}
+/*Стили блока выдача лицензии*/
+.license-inner{
+    padding-bottom: 40px;
+}
+.license-cards{
+    display: grid;
+    justify-content: center;
+    gap: 0 30px;
+    grid-template-columns: auto auto;
+}
+.license-title{
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 28px;    
+    color: #2F3D53;
+    padding-bottom: 25px; 
+}
+.license-card-item{
+    max-width: 540px;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 10px;
+    background: url('../img/main__page/gov_license1.png')no-repeat, rgba(55, 100, 189, 0.91);
+    position: relative;
+}
+.license-card-item:hover{
+    box-shadow: 0 0 10px rgba(31, 60, 136, 0.8);
+    transition: .3s ease all;
+}
+.__license_card_second{
+    background: url('../img/main__page/gov_license2.png') no-repeat, rgba(55, 100, 189, 0.91);;
+}
+.license-card-content{
+    padding: 25px;
+}
+.license-card-content p{
+    padding-bottom: 20px;
+}
+p.license-card-title{
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 21px;
+    color: #FFFFFF;
+}
+p.license-card-short{
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: #FFFFFF;
+}
+p.license-card-date{
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    color: rgba(255, 255, 255, 0.9);
+}
+.goverment-license-show-posts{
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 16px;    
+    color: rgba(255, 255, 255, 0.9);    
+    position: absolute;
+    right: 20px;
+    bottom: 10px;
+}
+/*Стили блока государсвтенный контроль*/
+.goverment-control-inner{
+    padding-bottom: 40px;
+}
+.goverment-control-cards{
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: center;
+    gap: 0 30px;
+}
+.goverment-control-title{
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 28px;    
+    color: #2F3D53;
+    padding-bottom: 25px; 
+}
+.goverment-control-card-item{
+    cursor: pointer;
+    max-width: 486px;
+    background: rgba(59, 66, 86, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.22);
+    border-radius: 10px;
+}
+.goverment-control-card-item:hover{
+    box-shadow: 0 0 10px rgba(31, 60, 136, 0.8);
+    transition: .3s ease all;   
+}
+.goverment-control-card-content{
+    padding: 25px;
+}
+.goverment-control-post{
+    padding-bottom: 20px;
+}
+.__last-goverment-control-post{
+    padding-bottom: 0;
+}
+.goverment-control-post-title{
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: #131313;    
+}
+.goverment-control-post-date{
+    padding-top: 8px;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 18px;
+    color: #616161;
+}
+.goverment-control-posts{
+    float: right;
+}
+.goverment-control-online img{
+    display: block;
+    margin: 0 auto;
+}
+.goverment-control-online-card{
+    max-width: 495px;
+    padding: 40px;
+    text-align: center;
+    background: rgba(59, 66, 86, 0.1);
+    border-radius: 10px;
+}
+.online-card-title{
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 23px;
+    color: #2A2323;
+}
+.online-card-text{
+    padding: 19px 0 30px 0;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+    color: #2A2323;
+}
+.online-reception{
+    padding: 11px 30px;
+    background: #1565C0;
+    border-radius: 10px;
+    color: #fff;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;   
+}
+/*Стили блока разделитель о правах детей*/
+.children-rights-wrapper{
+    background: url('../img/main__page/ornament_kz.png') #F2F2F2;
+}
+.children-rights-inner{
+    padding: 30px 10px;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 28px;
+    color: #2A2323;
+    text-align: center;
+}
+.children-rights-law-inner{
+    padding: 40px 10px;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 26px;
+    text-align: center;
+    color: #000000;
+}
+/*Стили блока контактов и обратной связи*/
+.contacts-wrapper{
+    background: #F4F4F4;
+}
+.contacts-inner-content{
+    padding: 75px 0 40px 0;
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+.contacts-title{
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 28px;
+    color: #1565C0;
+}
+/*Контакты и адрес*/
+.contacts-adress{
+    border-right: 1px solid rgba(0, 0, 0, 0.5);
+}
+.contacts-adress p{
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 26px;
+    color: #2A2323;
+    padding: 30px 0;
+}
+/*Контакты и обратная связь - кнопки*/
+.contacts-buttons{
+    padding: 0 30px;
+}
+.contact-btn{
+    padding: 10px 50px;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 23px;
+    color: #2A2323;
+    border: 2px solid rgba(0, 0, 0, 0.55);
+    border-radius: 10px;
+    display: block;
+    text-align: center;
+    margin: 30px 0;
+}
+/*Стилизация футера*/
+.footer-wrapper{
+    background: #1F3C88;
+}
+.footer-inner{
+    padding: 40px 10px 40px 10px;
+    display: grid;
+    grid-template-columns: 50% 50%; 
+    position: relative;
+}
+.footer-img-bottom{
+    position: absolute;
+    bottom: 0;
+    left: 30%;
+}
+.footer-img-right{
+    position: absolute;
+    right: 0;
+    top: 30%;
+}
+.foooter-text-links li{
+    list-style: none;
+}
+.foooter-text-links li:not(:last-child){
+    padding-bottom: 10px;
+}
+li.footer-news{
+    padding-top: 20px;
+}
+.footer-link{
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 24px;    
+    color: #FFFFFF;       
+}
+.footer__title{
+    font-size: 24px;
+}
+.footer-social-icons{
+    padding: 40px 0 40px 0;
+}
+.footer-social-icons-title{
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 24px;
+    color: #FFFFFF;
+}
+.footer-social-icons-item{
+    display: flex;
+    padding-top: 20px;
+}
+.footer-social-icons-item li{
+    list-style: none;
+}
+.footer-social-icons-item li:not(:last-child){
+    padding-right: 15px;
+}
+.footer-subscribe{
+    padding:0 20px;
+}
+.footer-subscribe-title{
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 23px;    
+    color: #FFFFFF;
+    padding-bottom: 17px;
+}
+input.email-subscribe{
+	font-family: 'Roboto', sans-serif;
+    width: 380px;
+    padding: 18px 10px 18px 10px;    
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 20px;
+    color: rgba(0, 0, 0, 1);
+}
+input.email-subscribe::placeholder{
+    color: rgba(0, 0, 0, 0.33);    
+}
+input.check-email-subscribe{
+    position: absolute;
+    z-index: -1;
+    opacity: 0;  
+}
+.footer-check{
+    padding-top: 15px;
+    padding-bottom: 20px;
+}
+/*Стилизация кастомного чекбокса*/
+.check-email-subscribe+label {
+    display: inline-flex;
+    align-items: center;
+    user-select: none;
+}
+.check-email-subscribe+label::before {
+    content: '';
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    flex-shrink: 0;
+    flex-grow: 0;
+    border: 1px solid #adb5bd;
+    border-radius: 0.25em;
+    margin-right: 0.5em;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 50% 50%;
+}
+.check-email-subscribe:checked+label::before {
+  border-color: #0b76ef;
+  background-color: #0b76ef;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3e%3c/svg%3e");
+}
+.label-email-check{
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 23px;
+    color: #FFFFFF;    
+}
+a.subscribe-btn{
+    padding: 16px 40px 16px 40px;
+    background-color: #F2F2F2;
+    color:rgba(31, 60, 136, 0.8);
+    border-radius: 10px;
+}
+.under-footer-wrapper{
+    background: #083759;
+}
+.under-footer-inner{
+    max-width: 380px;
+    color: #fff;
+    padding: 12px 0;
+    text-align: center;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 15px;
+}
+
+
+.__administration{
+    background: url(../img/main__page/ornament_kz.png) no-repeat, rgba(217, 217, 217, 1);
+    margin-bottom: 0;
+}
+.administration-inner{
+    padding: 30px 10px 30px 10px;
+}
+.adm-title{
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 28px;    
+    color: #2F3D53 ;
+}
+.about-director-inner{
+    padding: 25px 10px 25px 10px;
+    background: rgba(59, 66, 86, 0.1);
+    border-radius: 20px;
+}
+.about-director-inner-content{
+    display: flex;
+    justify-content: center;
+}
+.adm-bio{
+    padding-left: 70px;
+    padding-top: 85px;
+    max-width: 575px;
+}
+p.adm-fio{
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 35px;
+    color: #000000;
+}
+p.adm-role{
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 25px;
+    color:#616161;   
+}
+p.adm-date{
+    padding-top: 20px;
+    font-size: 20px;
+    font-weight: 400;
+    color: #000000;
+}
+p.adm-education{
+    font-size: 20px;
+    font-weight: 400;
+    color: #000000;
+}
+.about-education-inner{
+    padding: 40px 10px 40px 10px;
+}
+.about-education-title,
+.about-work-title,
+.about-rewards-title{
+    font-weight: 400;
+    font-size: 24px;
+    color: #2F3D53;
+    line-height: 28px;
+    padding-bottom: 20px;
+}
+.about-education-content{
+    padding: 30px 13px 17px 13px;
+    color: #616161;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 23px;
+    max-width: 100%;
+    background: rgba(59, 66, 86, 0.05);
+    border-radius: 20px;    
+}
+.about-education-content li{
+    max-width: 1005px;
+}
+.about-education-content li:not(:last-child),
+.about-work-content li:not(:last-child){
+    padding-bottom: 20px;
+}
+.about-work-inner{
+    padding-bottom: 40px;
+}
+.about-work-content,
+.about-rewards-content{
+    color: #616161;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 23px;
+}
+.about-rewards-inner{
+    padding-bottom: 40px;
+}

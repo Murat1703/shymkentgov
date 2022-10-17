@@ -1,0 +1,123 @@
+@media (max-width: 1199px){
+    .title{
+        margin-left: 0;
+    }
+    .activities-cards{
+        grid-template-columns:repeat(2, minmax(0, 360px));
+    }
+    .news-cards{
+        grid-template-columns: repeat(2, minmax(0, 375px));
+        gap: 30px 30px;
+    }
+}
+@media (max-width: 960px){
+    .menu-item{
+        display: none;
+    }
+    .menu-burger{
+        display: block;
+    }
+    .under-header-inner{
+        max-width: 900px;
+        flex-direction: column;
+    }
+    .title{
+        margin: -20px 0 20px 0;
+    }
+    .ask-btn{
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .card-item{
+        max-width: 450px;
+    }
+    .activities-cards{
+        grid-template-columns:repeat(2, minmax(0, 360px));
+    }
+    .news-cards{
+        grid-template-columns: repeat(1, minmax(0, 375px));
+        gap: 30px 0;
+    }
+    .department-cards{
+        grid-template-columns: auto auto;
+        gap: 30px 30px;
+    }
+    input.email-subscribe{
+        width: 300px;
+    }
+}
+@media (max-width: 760px){
+    .title__main{
+        font-size: 16px;
+    }
+    .title__second{
+        font-size: 20px;
+    }
+    .department-cards{
+        grid-template-columns: auto;
+        gap: 30px 0;
+    }
+    .goverment-services-cards,
+    .license-cards,
+    .goverment-control-cards{
+        grid-template-columns: auto;
+        gap: 30px 0;
+    }
+    .contacts-inner-content{
+        grid-template-columns: auto;
+    }
+    .contacts-buttons{
+        padding: 0;
+    }
+    .contacts-adress{
+        border-right: none;
+        margin-bottom: 30px;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+    }
+    .footer-inner{
+        grid-template-columns: auto;
+    }
+    .footer-subscribe{
+        padding: 0;
+    }
+    .footer-inner img{
+        display: none;
+    }
+    .about-director-inner-content{
+        display: block;
+    }
+    .adm-bio{
+        padding-left: 0;
+        padding-top: 20px;
+    }
+}
+@media (max-width: 500px){
+    .card-item{
+        max-width: 360px;
+    }
+    .activities-cards{
+        grid-template-columns:repeat(1, minmax(0, 360px));
+    }
+    .activities-title,
+    .__title,
+    .goverment-services-title,
+    .license-title,
+    .goverment-control-title{
+        font-size: 20px;
+    }
+    .news-subscribe a{
+        display: block;
+    }
+}
+@media (max-width: 400px){
+    span.kz_emblem__text{
+        display: none;
+    }
+    .goverment-control-online img{
+        width: 100%;
+    }
+    img.adm_photo{
+        width: 100%;
+    }
+    
+}
